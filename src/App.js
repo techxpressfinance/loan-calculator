@@ -12,10 +12,7 @@ const CalculatorIcon = () => (
   </svg>
 );
 
-
-// Main App Component
 export default function App() {
-  // State variables for loan inputs
   const [loanAmount, setLoanAmount] = useState(250000);
   const [interestRate, setInterestRate] = useState(3.5);
   const [loanTerm, setLoanTerm] = useState(30);
@@ -23,7 +20,6 @@ export default function App() {
   const [monthlyRepayment, setMonthlyRepayment] = useState(0);
   const [overrideRepayment, setOverrideRepayment] = useState(false);
 
-  // Memoized calculation for amortization schedule and summary
   const { schedule, totalInterest, totalPayment, calculatedMthRepayment } = useMemo(() => {
     const principal = parseFloat(loanAmount);
     const rate = parseFloat(interestRate) / 100 / 12;
